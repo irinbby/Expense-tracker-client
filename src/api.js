@@ -1,0 +1,1 @@
+export const baseurl="https://expense-tracker-server-qdcs.onrender.com"
