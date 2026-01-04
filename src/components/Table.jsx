@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { baseurl } from '../api';
 
 
 
@@ -17,7 +18,7 @@ import { Link } from 'react-router-dom';
 export default function ExpenseTable({ allExpenses,fetchAllExpenses }) {
   const handleDelete = async (expense) => {
     try {
-      const res = await axios.delete(`http://localhost:7000/api/expense/delete/${expense}`)
+      const res = await axios.delete(`${baseurl}/api/expense/delete/${expense}`)
       console.log(res.data)
       if (res.data.success) {
         fetchAllExpenses()

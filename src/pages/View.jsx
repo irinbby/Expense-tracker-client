@@ -4,12 +4,13 @@ import ExpenseTable from '../components/Table'
 import FloatingappButton from '../components/Floatingappbutton'
 import { useState } from 'react'
 import axios from 'axios'
+import { baseurl } from '../api'
 
 export default function View() {
     const[allExpenses,setAllExpenses]=useState([])
     const fetchAllExpenses=async()=>{
         try {
-            const res=await axios.get(`http://localhost:7000/api/expense/view-all`)
+            const res=await axios.get(`${baseurl}/api/expense/view-all`)
             //console.log(res.data)
             if (res.data.success) {
                 setAllExpenses(res.data.expenses)
